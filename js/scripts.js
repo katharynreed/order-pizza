@@ -1,16 +1,31 @@
 function Pizza(toppings, size) {
   this.toppings = toppings;
-  this.pizzaSize = size;
+  this.size = size;
+}
+//back end
+
+Pizza.prototype.price = function () {
+  return ((this.toppings.length - 1) * 3.5) * this.size * 4.5;
 }
 
-//front-end
+String.prototype.convertToppingsToArray = function () {
+  return this.split(", ")
+}
+
+// function resetFields() {
+//   $(input#toppings).val();
+//   $(select#size).val();
+// }
+
+//front end
 
 $(document).ready(function() {
-  $("#add-pizza").click(function () {
+  $("#add-pizza").click(function (event) {
+    event.preventDefault();
     $("#all-pizzas").append('<div class="new-pizza">' +
                                 '<div class="form-group">' +
                                   '<label for="toppings">Toppings</label>' +
-                                  '<input type="text" class="form-control" id="toppings" placeholder="Example: Rad-ish, Mystery of the Void, Tiny Fish from Ocean>' +
+                                  '<input type="text" class="form-control" id="toppings" placeholder="Example: Rad-ish, Mystery of the Void, Tiny Fish from Ocean">' +
                                 '</div>' +
                                 '<div class="form-group">' +
                                   '<label for="size">Size</label>' +
@@ -25,8 +40,9 @@ $(document).ready(function() {
                               '</div>');
   });
 
-  $("form#order-pizza").submit(function(event) {
+  $("#order-pizza").submit(function(event) {
       event.preventDefault();
+      alert("this is working");
       total = 0;
       sizes = ["Teeny-Tiny", "Medi-yum", "Pretty Big", "Mondo", "Mega Mondo"]
 
@@ -44,6 +60,9 @@ $(document).ready(function() {
       $("#total").text(total);
       $("#show-total").show();
 
-      resetFields();
+      console.log(total);
+      console.log();
+
+      // resetFields();
   });
 });
