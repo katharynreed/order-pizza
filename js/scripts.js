@@ -33,3 +33,17 @@ $(document).ready(function() {
       $(".new-pizza").each(function() {
       var inputtedToppings = $(this).find('input#toppings').val();
       var inputtedSize = parseFloat($(this).find('select#size').val());
+
+      $("ul#ordered-pizzas").append("<li>" + sizes[inputtedSize - 1] + " pizza with " + inputtedToppings);
+            var newPizza = new Pizza(inputtedToppings.convertToppingsToArray(), inputtedSize);
+            total = parseFloat(total);
+            total += newPizza.price();
+            total = total.toFixed(2);
+          });
+
+      $("#total").text(total);
+      $("#show-total").show();
+
+      resetFields();
+  });
+});
