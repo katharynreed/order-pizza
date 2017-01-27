@@ -5,17 +5,16 @@ function Pizza(toppings, size) {
 //back end
 
 Pizza.prototype.price = function () {
-  return ((this.toppings.length - 1) * 3.5) * this.size * 4.5;
+  return ((this.toppings.length + 1) * 2) * this.size * 4.5;
 }
 
 String.prototype.convertToppingsToArray = function () {
   return this.split(", ")
 }
 
-// function resetFields() {
-//   $(input#toppings).val();
-//   $(select#size).val();
-// }
+  var resetFields = function() {
+  $("#new-name").val("");
+}
 
 //front end
 
@@ -40,9 +39,8 @@ $(document).ready(function() {
                               '</div>');
   });
 
-  $("#order-pizza").submit(function(event) {
+  $("form#order-pizzas").submit(function(event) {
       event.preventDefault();
-      alert("this is working");
       total = 0;
       sizes = ["Teeny-Tiny", "Medi-yum", "Pretty Big", "Mondo", "Mega Mondo"]
 
@@ -63,6 +61,6 @@ $(document).ready(function() {
       console.log(total);
       console.log();
 
-      // resetFields();
+      resetFields();
   });
 });
