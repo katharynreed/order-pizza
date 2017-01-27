@@ -10,7 +10,7 @@ $(document).ready(function() {
     $("#all-pizzas").append('<div class="new-pizza">' +
                                 '<div class="form-group">' +
                                   '<label for="toppings">Toppings</label>' +
-                                  '<input type="text" class="form-control" id="toppings" placeholder="Separate, toppings, with, a, commma, and, space">' +
+                                  '<input type="text" class="form-control" id="toppings" placeholder="Example: Rad-ish, Mystery of the Void, Tiny Fish from Ocean>' +
                                 '</div>' +
                                 '<div class="form-group">' +
                                   '<label for="size">Size</label>' +
@@ -24,3 +24,12 @@ $(document).ready(function() {
                                 '</div>' +
                               '</div>');
   });
+
+  $("form#order-pizza").submit(function(event) {
+      event.preventDefault();
+      total = 0;
+      sizes = ["Teeny-Tiny", "Medi-yum", "Pretty Big", "Mondo", "Mega Mondo"]
+
+      $(".new-pizza").each(function() {
+      var inputtedToppings = $(this).find('input#toppings').val();
+      var inputtedSize = parseFloat($(this).find('select#size').val());
