@@ -15,4 +15,19 @@ h4.pizzaheader {
 
 body {
   background-image: url(pizzabackground.png);
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+}
+
+select {
+  max-width: 50%;
+  margin: 0 auto;
+  float: none;
+}
+
+input {
+    max-width: 50%;
+    margin: 0 auto;
+    float: none;
+  }
 }
