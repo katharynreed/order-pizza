@@ -12,37 +12,43 @@
    </head>
    <body>
      <div class="container">
-         <h1 class="header">Pizza con Excellence</h1>
-         <h4 class="header">Excellent Pizza.</h4>
-     <form id="order-pizzas">
-       <div id="all-pizzas">
-         <div class="new-pizza">
-           <div class="form-group">
-             <label for="toppings">Toppings</label>
-             <input type="text" class="form-control" id="toppings" placeholder="Example: Rad-ish, Mystery of the Void, Tiny Fish from Ocean">
+       <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="page-header">
+           <h1 class="pizzaheader">Pizza con Excellence</h1>
+           <h4 class="pizzaheader">Excellent Pizza.</h4>
+          </div>
+         <form id="order-pizzas">
+           <div id="all-pizzas">
+             <div class="new-pizza">
+               <div class="form-group">
+                 <label for="toppings">Toppings</label>
+                 <input type="text" class="form-control" id="toppings" placeholder="Example: Rad-ish, Mystery of the Void, Tiny Fish from Ocean">
+               </div>
+               <div class="form-group">
+                 <label for="size">Size</label>
+                 <select id="size" class="form-control">
+                   <option value="1">Teeny-Tiny</option>
+                   <option value="2">Medi-yum</option>
+                   <option value="3">Pretty Big</option>
+                   <option value="4">Mondo</option>
+                   <option value="5">Mega Mondo</option>
+                 </select>
+               </div>
+             </div>
            </div>
-           <div class="form-group">
-             <label for="size">Size</label>
-             <select id="size" class="form-control">
-               <option value="1">Teeny-Tiny</option>
-               <option value="2">Medi-yum</option>
-               <option value="3">Pretty Big</option>
-               <option value="4">Mondo</option>
-               <option value="5">Mega Mondo</option>
-             </select>
-           </div>
-         </div>
-       </div>
-       <button id="order-pizza" type="submit" class="btn">Order Pizza!</button>
-       <button id="more-pizza" class="btn">Order Another Pizza!</button>
-     </form>
+           <button id="order-pizza" type="submit" class="btn">Order Pizza!</button>
+           <button id="more-pizza" class="btn">Order Another Pizza!</button>
+         </form>
 
-     <div id="show-total">
-       <div id="show-ordered-pizzas">
-         <br/>
-         <p><span id="ordered-pizzas"></span></p>
-       <p>Your total is: $<span id="total"></span>.</p>
-     </div>
+         <div id="show-total">
+           <div id="show-ordered-pizzas">
+             <br/>
+             <p><span id="ordered-pizzas"></span></p>
+           <p>Your total is: $<span id="total"></span>.</p>
+        </div>
+      </div>
+    </div>
    </div>
  </body>
 </html>
