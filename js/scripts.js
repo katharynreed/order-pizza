@@ -8,7 +8,7 @@ Pizza.prototype.price = function () {
   return ((this.toppings.length) * 2) * this.size * 4.5;
 }
 
-String.prototype.convertToppingsToArray = function () {
+String.prototype.toppingArray = function () {
   return this.split(", ")
 }
 
@@ -30,7 +30,7 @@ $(document).ready(function() {
       var inputtedSize = parseFloat($(this).find('select#size').val());
 
       $("#ordered-pizzas").text(sizes[inputtedSize - 1] + " pizza with " + inputtedToppings);
-            var newPizza = new Pizza(inputtedToppings.convertToppingsToArray(), inputtedSize);
+            var newPizza = new Pizza(inputtedToppings.toppingArray(), inputtedSize);
             total = parseFloat(total);
             total += newPizza.price();
             total = total.toFixed(2);
