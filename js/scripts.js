@@ -29,7 +29,7 @@ $(document).ready(function() {
       var inputtedToppings = $(this).find('input#toppings').val();
       var inputtedSize = parseFloat($(this).find('select#size').val());
 
-      $("#ordered-pizzas").text(sizes[inputtedSize - 1] + " pizza with " + inputtedToppings);
+      $("#ordered-pizzas").text(sizes[inputtedSize - 1] + " pizza with " + inputtedToppings + ".");
             var newPizza = new Pizza(inputtedToppings.toppingArray(), inputtedSize);
             total = parseFloat(total);
             total += newPizza.price();
